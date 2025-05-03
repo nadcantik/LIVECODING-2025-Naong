@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Unggah Resep Masakan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="unggah.css">
+</head>
+<body>
+
+<div class="container mt-5 mb-5">
+  <h2 class="mb-4">Form Resep Masakan</h2>
+
+  <!-- Judul Resep -->
+  <div class="form-section">
+    <label class="form-label">Judul Resep <span class="text-danger">*</span></label>
+    <input type="text" class="form-control mb-3" placeholder="Contoh: Sup Ayam Favorit">
+
+    <div class="d-flex align-items-center mb-4">
+      <img src="https://via.placeholder.com/40" class="rounded-circle me-2">
+      <div>
+        <strong>Nadtsaya Faizah Aqilah</strong><br>
+        <small class="text-muted">@nadd3</small>
+      </div>
+    </div>
+
+    <!-- Cerita dan Foto Jejer -->
+    <div class="row">
+      <!-- Cerita -->
+      <div class="col-md-7 mb-3">
+        <label class="form-label">Cerita Masakan (Opsional)</label>
+        <textarea class="form-control" rows="8" placeholder="Ceritakan inspirasi, tips, atau pengalamanmu membuat resep ini..."></textarea>
+      </div>
+
+      <!-- Upload Foto -->
+      <div class="col-md-5 mb-3">
+        <label class="form-label">Upload Foto Resep</label>
+        <div class="upload-box">
+          <span>[Opsional]</span>
+          <strong>Upload Foto Akhir Masakan</strong>
+        </div>
+        <small class="text-muted d-block mt-2 text-center">Foto akhir hasil masakan</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bahan-bahan -->
+  <div class="form-section">
+    <h5>Bahan-bahan</h5>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label-sm">Porsi</label>
+        <input type="text" class="form-control" placeholder="2 orang">
+      </div>
+    </div>
+    <div class="mb-2">
+      <input type="text" class="form-control mb-2" value="½ ekor ayam">
+      <input type="text" class="form-control mb-2" value="2 buah wortel">
+    </div>
+    <a href="#" class="text-primary">+ Tambah Bahan</a>
+  </div>
+
+  <!-- Langkah-langkah -->
+  <div class="form-section">
+    <h5>Langkah Memasak</h5>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label-sm">Lama Memasak</label>
+        <input type="text" class="form-control" placeholder="1 jam 30 menit">
+      </div>
+    </div>
+
+    <div class="step-input">
+      <label class="form-label-sm">Langkah 1</label>
+      <input type="text" class="form-control mb-2" value="Potong ayam menjadi beberapa bagian, sisihkan.">
+      <div class="upload-box mt-1">[Opsional] Upload Foto Langkah</div>
+    </div>
+
+    <div class="step-input">
+      <label class="form-label-sm">Langkah 2</label>
+      <input type="text" class="form-control mb-2" value="Didihkan air, rebus ayam hingga matang.">
+      <div class="upload-box mt-1">[Opsional] Upload Foto Langkah</div>
+    </div>
+
+    <a href="#" class="text-primary">+ Tambah Langkah</a>
+  </div>
+</div>
+
+</body>
+</html>
