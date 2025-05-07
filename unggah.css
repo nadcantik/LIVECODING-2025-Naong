@@ -40,3 +40,18 @@ body {
       font-size: 0.85rem;
       font-weight: 500;
     }
+
+.btn-delete {
+  background-color: #e48b18;
+  border-radius: 15px;
+}
+.btn-add {
+  background-color: #e48b18;
+  border-radius: 15px;
+}
+.btn-delete:hover{
+  background-color:#d79437;
+}
+.btn-add:hover {
+  background-color:#d79437;
+}
