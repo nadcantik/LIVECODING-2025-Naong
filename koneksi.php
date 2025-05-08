@@ -6,9 +6,12 @@ $database = "macok";
 
 $conn = mysqli_connect($host, $username, $password, $database);
 
-if (!$conn) {
-    die("Koneksi gagal: " . mysqli_connect_error());
-} else {
-    echo "Koneksi berhasil!";
+function query($query) {
+    global $koneksi;
+    $result = mysqli_query($koneksi, $query);
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
 }
-?>
