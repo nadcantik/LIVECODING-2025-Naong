@@ -1,3 +1,8 @@
+<?php
+$favorit = [
+];
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -47,6 +52,7 @@
       display: flex;
       justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -62,22 +68,28 @@
     .btn:hover {
       background-color: #219150;
     }
-
-    .breadcrumb {
-      margin-bottom: 20px;
-      color: #666;
-      font-size: 14px;
-    }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <div class="icon-unggah">🍲</div>
-    <h2> Unggah Resep Mu Di Sini</h2>
-    <p>Buat dan unggah resep hasil masakan mu.<br/>Klik untuk Unggah resep.</p>
-    <div class="btn-container">
-      <a href="form unggah resep.html" class="btn">❤️unggah resep</a>
-    </div>
+    <div class="icon-heart">❤️</div>
+
+    <?php if (empty($favorit)) : ?>
+      <h2>Halaman favorit masih kosong</h2>
+      <p>Simpan resep dan artikel favorit di lain waktu.<br/>Klik untuk menyimpan.</p>
+      <div class="btn-container">
+        <a href="index.php" class="btn">🍲 Lihat resep</a>
+      </div>
+    <?php else : ?>
+      <h2>Resep Favorit Anda</h2>
+      <p>Berikut adalah daftar resep yang Anda simpan:</p>
+      <div class="btn-container">
+        <?php foreach ($favorit as $judul): ?>
+          <a href="resep.php?judul=<?= urlencode($judul) ?>" class="btn"><?= $judul ?></a>
+        <?php endforeach; ?>
+      </div>
+    <?php endif; ?>
   </div>
 
 </body>
