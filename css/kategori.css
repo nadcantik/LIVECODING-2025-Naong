@@ -1,0 +1,17 @@
+.recipe-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    }
+.badge-time, .badge-level {
+    font-size: 0.75rem;
+    }
+.card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    }
+.filter-btn {
+    margin: 10px 5px;
+    }

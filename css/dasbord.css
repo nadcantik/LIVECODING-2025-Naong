@@ -1,12 +1,11 @@
 body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
+      font-family: 'poppins', sans-serif;
       background-color: #fffaf4;
       color: #333;
     }
 
     header {
-      background: url('https://images.unsplash.com/photo-1606788075760-8b4cd13f6a0f') no-repeat center center;
       background-size: cover;
       height: 300px;
       display: flex;
@@ -33,12 +32,12 @@ body {
       justify-content: center;
       flex-wrap: wrap;
       gap: 50px;
-      margin: 30px 0;
+      margin: 3px 0;
     }
 
     .category-list img {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
       border-radius: 50%;
       border: 2px solid #eee;
