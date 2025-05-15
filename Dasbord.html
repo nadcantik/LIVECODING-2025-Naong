@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dasbord| Macook</title>
-  <link rel="stylesheet" href="login.css" id="3">
+  <link rel="stylesheet" href="/css/dasbord.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"/>
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -14,14 +15,15 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+    <div></div>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item" style="margin: 5px;">
             <a class="nav-link active" aria-current="page" href="#">Beranda</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown" style="margin: 5px;">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
+              Kategori
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Breakfest</a></li>
@@ -31,148 +33,13 @@
               <li><a class="dropdown-item" href="#">Makanan</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" style="margin: 5px;">
             <a class="nav-link" href="#">Unggah Resepmu</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-<body>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #fffaf4;
-      color: #333;
-    }
-
-    header {
-      background: url('https://images.unsplash.com/photo-1606788075760-8b4cd13f6a0f') no-repeat center center;
-      background-size: cover;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 20px;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1rem;
-      max-width: 400px;
-      margin-top: 10px;
-    }
-
-    .category-list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 50px;
-      margin: 30px 0;
-    }
-
-    .category-list img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #eee;
-      transition: transform 0.3s;
-    }
-
-    .category-list img:hover {
-      transform: scale(1.1);
-    }
-
-    .upload-btn {
-      display: block;
-      background-color: #ff9800;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 10px;
-      margin: 30px auto;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .upload-btn.animate {
-      transform: scale(1.1);
-      background-color: #ffb13c;
-    }
-
-    .recipe-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-@media screen and (max-width: 992px) {
-  .recipe-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per baris di tablet */
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .recipe-grid {
-    grid-template-columns: 1fr; /* 1 per baris di HP */
-  }
-}
-
-    .recipe-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: 0.3s;
-
-    }
-
-    .recipe-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .recipe-card .info {
-      padding: 15px;
-    }
-
-    .tags {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      background: #ffe0e0;
-      padding: 4px 8px;
-      border-radius: 6px;
-      color: #d32f2f;
-    }
-
-    .tag.easy {
-      background: #e0ffe9;
-      color: #2e7d32;
-    }
-
-    .recipe-card p {
-      margin: 0;
-      font-weight: 500;
-    }
-  </style>
-</head>
-<body>
 
   <!-- Hero Section -->
   <header>
