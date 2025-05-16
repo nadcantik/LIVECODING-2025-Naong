@@ -5,6 +5,12 @@ body {
       color: #333;
     }
 
+    nav
+        {
+          background-color: #FEF9E1;
+        }
+
+
     header {
       background-size: cover;
       height: 300px;
@@ -127,3 +133,13 @@ body {
       margin: 0;
       font-weight: 500;
     }
+
+    .btn.btn-masuk {
+      background-color: #ff9800;
+    }
+
+    .btn.btn-daftar {
+      background-color: #ff9800;
+    }
+
+    
