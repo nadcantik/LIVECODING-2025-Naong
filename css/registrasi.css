@@ -1,20 +1,39 @@
+.form-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 15px 15px 15px 20px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(6px);
+  }
 
-    body {
-      background-color: #f5f5f5;
-    }
-    .form-container {
-      background-color: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .form-control {
-      margin-bottom: 15px;
-    }
-    .btn-submit {
-      background-color: #10ae35;
-      color: white;
-    }
-    .btn-submit:hover {
-      background-color: #27a043;
-    }
+  .form-control {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.3s;
+  }
+
+  .form-control:focus {
+    border-color: #10ae35;
+    box-shadow: 0 0 0 0.2rem rgba(16, 174, 53, 0.25);
+  }
+
+  .btn-submit {
+    background-color: #10ae35;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-submit:hover {
+    background-color: #0e8d2e;
+  }
+
+  .form-container img {
+    margin-bottom: 20px;
+  }
