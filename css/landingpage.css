@@ -1,0 +1,246 @@
+body {
+      margin: 0;
+      font-family: 'poppins', sans-serif;
+      background-color: #fffaf4;
+      color: #333;
+    }
+
+    nav
+        {
+          background-color: #FEF9E1;
+        }
+
+
+    header {
+      background-size: cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1rem;
+      max-width: 400px;
+      margin-top: 10px;
+    }
+
+    .category-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      margin: 3px 0;
+    }
+
+    .category-list img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #eee;
+      transition: transform 0.3s;
+    }
+
+    .category-list img:hover {
+      transform: scale(1.1);
+    }
+
+    .upload-btn {
+      display: block;
+      background-color: #ff9800;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      margin: 30px auto;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-top: 50px;
+    }
+
+    .upload-btn.animate {
+      transform: scale(1.1);
+      background-color: #ffb13c;
+    }
+
+    .recipe-grid {
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    gap: 20px;                 
+    flex-wrap: wrap;           
+    padding: 20px;
+    }
+
+    .recipe-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.5s;
+
+    }
+
+    .recipe-card:hover{
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .recipe-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .recipe-card .info {
+      padding: 15px;
+    }
+
+    .tags {
+      display: flex;
+      font-family: poppins, sans-serif;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      background: #ffffff;
+      padding: 4px 8px;
+      border-radius: 6px;
+      outline: 2px solid #ff9800;
+      justify-items: center;
+    }
+
+    #tageasy {
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+    .tag.easy {
+      border-radius: 6px;
+      background: #fff;
+      outline: 2px solid #ff9800;
+      justify-items: center;
+    }
+
+    .recipe-card p {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .btn.btn-masuk {
+      background-color: #ff9800;
+    }
+
+    .btn.btn-daftar {
+      background-color: #ff9800;
+    }
+
+    .foo {
+      background-color: #FEF9E1;
+      margin-top: 100px;
+      font-family: poppins, sans-serif;
+    }
+
+    
+  .footer {
+    background-color: #FEF9E1;
+    padding: 40px 20px;
+    font-family: poppins, sans-serif;
+    margin-top: 100px;
+  }
+
+  .footer .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  
+  .footer .col {
+    flex: 1 1 250px;
+    min-width: 250px;
+  }
+
+  
+  .footer h3 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+  }
+
+  .footer p,
+  .footer h4 {
+    font-size: 14px;
+    color: #000000;
+    margin:rgb(0, 0, 0) 0;
+  }
+
+  .footer p#foot {
+    margin: 4px 0;
+  }
+
+  
+  .footer a {
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease;
+  }
+
+  .footer a:hover {
+    color: #ffffff;
+  }
+
+  #foto{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+  }
+
+  #foto:hover {
+    transform: scale(1.2);
+  }
+
+  #logofooter {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .footer .row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer .col {
+      width: 100%;
+    }
+  }
+
+
+    
