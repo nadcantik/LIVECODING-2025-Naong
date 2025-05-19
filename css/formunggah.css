@@ -1,8 +1,6 @@
 body {
-      margin: 0;
-      font-family: 'poppins', sans-serif;
-      background-color: #fffaf4;
-      color: #333;
+      background-color: #f2f2f2;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     nav {
@@ -46,32 +44,45 @@ body {
     }
 
     .container {
-      margin-top: 110px;
-    }
-
-    .badge-custom {
-      background-color: #fff3cd;
-      border-left: 5px solid #ffc107;
-      padding: 10px 15px;
       border-radius: 10px;
-      font-weight: 500;
+      padding: 30px;
+      margin-top: 30px;
     }
-    .section-box {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      margin-bottom: 20px;
+    .upload-area {
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      background-color: #fff;
     }
-    .btn-fav {
-      font-size: 1rem;
+    .upload-btn {
+      border: 1px solid #a94442;
+      color: #a94442;
+      background-color: #fff;
     }
-    .btn-fav.saved {
-      background-color: #dc3545;
+    .upload-btn:hover {
+      background-color: #f2dede;
+    }
+    .btn-add, .btn-remove {
+      margin-top: 10px;
+    }
+    .btn-remove {
+      background-color: #a52a2a;
       color: white;
     }
+    .step-container {
+      display: flex;
+      gap: 10px;
+      align-items: start;
+    }
+    .step-container input[type="file"] {
+      width: 200px;
+    }
+    .step-container textarea {
+      flex: 1;
+    }
 
-     .footer {
+.footer {
     background-color: #FEF9E1;
     padding: 40px 20px;
     font-family: poppins, sans-serif;
@@ -155,4 +166,3 @@ body {
       width: 100%;
     }
   }
-
