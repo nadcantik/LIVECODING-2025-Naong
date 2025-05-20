@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Validasi sederhana
   if (!$nama || !$no_telp || !$email || !$username || !$password) {
-    die("Semua field wajib diisi.");
   }
 
   $sql = "INSERT INTO user (nama, no_telp, email, username, password) VALUES (?, ?, ?, ?, ?)";
@@ -36,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $stmt->bind_param("sssss", $nama, $no_telp, $email, $username, $password);
 
   if ($stmt->execute()) {
-    echo "<script>alert('Registrasi berhasil!'); window.location.href='Login.html';</script>";
+    echo "<script>alert('Registrasi berhasil!'); window.location.href='Login.php';</script>";
   } else {
     echo "<script>alert('Registrasi gagal: " . $stmt->error . "'); window.history.back();</script>";
   }
@@ -66,11 +65,11 @@ $conn->close();
           <img src="foto/logo macook.png" alt="Logo" width="40%">
         </div>
         <form id="registrasiForm" method="post" action="registrasi.php">
-          <input type="text" class="form-control" placeholder="Nama" required>
-          <input type="text" class="form-control" placeholder="No telp" required>
-          <input type="email" class="form-control" placeholder="Email" required>
-          <input type="text" class="form-control" placeholder="Username" required>
-          <input type="text" class="form-control" placeholder="password" required>
+          <input type="text" name="nama" class="form-control" placeholder="Nama" required>
+          <input type="text" name="no_telp" class="form-control" placeholder="No telp" required>
+          <input type="email" name="email" class="form-control" placeholder="Email" required>
+          <input type="text" name="username" class="form-control" placeholder="Username" required>
+          <input type="password" name="password" class="form-control" placeholder="Password" required>
           <button type="submit" class="btn btn-submit w-100">Daftar</button>
         </form>
         <div class="text-center mt-3">

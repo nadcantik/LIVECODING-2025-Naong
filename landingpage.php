@@ -39,9 +39,8 @@
         </ul>
       </div>
       <div class="d-flex ">
-        <button class="btn btn-masuk me-3" type="submit" onclick="window.location.href='beranda.html'">Masuk</button>
-        <button class="btn btn-daftar me-5" type="submit">Daftar</button>
-    </div>
+        <button class="btn btn-masuk me-3" type="submit"><a href="Login.php" class="text-dark text-decoration-none">Masuk</a></button>
+        <button class="btn btn-masuk me-3" type="submit"><a href="Registrasi.php" class="text-dark text-decoration-none">Daftar</a></button>
   </nav>
 
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
