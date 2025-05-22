@@ -42,7 +42,7 @@
         <button class="btn btn-masuk me-3" type="submit"><a href="Login.php" class="text-dark text-decoration-none">Masuk</a></button>
         <button class="btn btn-masuk me-3" type="submit"><a href="Registrasi.php" class="text-dark text-decoration-none">Daftar</a></button>
   </nav>
-
+ 
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">

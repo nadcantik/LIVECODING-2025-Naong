@@ -138,7 +138,7 @@ body {
     }
 
     .recipe-card .info {
-      padding: 15px;
+      padding: 5px;
     }
 
     .tags {
@@ -175,6 +175,8 @@ body {
       margin: 0;
       font-weight: 500;
     }
+
+    
 
     .btn.btn-masuk {
       background-color: #ff9800;
