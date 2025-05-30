@@ -14,6 +14,7 @@ $favorit = $_SESSION['favorit'] ?? [];
   </style>
 </head>
 <body>
+  <?php include 'nav.php'; ?> 
 
   <div class="container">
     <div class="icon-heart">❤️</div>

@@ -2,9 +2,6 @@
 session_start();
 include "koneksi.php";
 
-// Inisialisasi variabel untuk pesan error
-$error = "";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($conn, $_POST["username"]);
     $password = mysqli_real_escape_string($conn, $_POST["password"]);
@@ -19,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
             $_SESSION['username'] = $username;
-            $_SESSION['id_user'] = $row['id_user'];
-            header("Location: beranda.html");
+            $_SESSION['id_user'] = $row['id'];
+            header("Location: index.php");
             exit;
         } else {
             $error = "Password salah!";
@@ -66,14 +63,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" name="username" class="form-control" placeholder="Username" required>
         <input type="password" name="password" class="form-control" placeholder="Password" required>
         <button type="submit" class="btn btn-login w-100">Login</button>
-</form>
+        </form>
 
   <?php if (!empty($error)): ?>
     <div class="alert alert-danger mt-3" role="alert">
       <?php echo $error; ?>
     </div>
   <?php endif; ?>
-</form>
 
         <div class="text-center mt-3">
           <small>Belum Punya Akun? <a href="registrasi.php">Daftar</a></small>

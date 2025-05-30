@@ -1,3 +1,13 @@
+<?php
+session_start();
+include 'koneksi.php';
+
+
+$query = "SELECT * FROM resep ORDER BY id_resep DESC LIMIT 6";
+$result = $conn->query($query);
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,43 +17,12 @@
   <link rel="stylesheet" href="css/landingpage.css">
   <link rel="icon" type="image/x-icon" href="foto/logo macook.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"/>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg fixed-top" style="font-family: poppins, sans-serif;">
-    <div class="container-fluid ms-3" >
-      <img src="foto/logo macook.png" width="8%">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ms-5">
-          <li class="nav-item" style="margin: 5px;">
-            <a class="nav-link active" aria-current="page" href="#">Beranda</a>
-          </li>
-          <li class="nav-item dropdown" style="margin: 5px;">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Kategori
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Masakan rumah</a></li>
-              <li><a  class="dropdown-item" href="#">kue</a></li>
-              <li><a class="dropdown-item" href="#">Minuman</a></li>
-              <li><a class="dropdown-item" href="#">Camilan</a></li>
-            </ul>
-              </li>
-              <li class="nav-item" style="margin: 5px;">
-                <a class="nav-link" href="">Unggah Resepmu</a>
-              </li>
-        </ul>
-      </div>
-      <div class="d-flex ">
-        <button class="btn btn-masuk me-3" type="submit"><a href="Login.php" class="text-dark text-decoration-none">Masuk</a></button>
-        <button class="btn btn-masuk me-3" type="submit"><a href="Registrasi.php" class="text-dark text-decoration-none">Daftar</a></button>
-  </nav>
- 
-  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+<?php include 'nav.php'; ?>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="foto/sidebar1.png" class="d-block w-100" alt="...">
@@ -56,99 +35,81 @@
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+    <span class="carousel-control-prev-icon"></span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+    <span class="carousel-control-next-icon"></span>
   </button>
 </div>
 
-  <!-- Category Section -->
-  <section class="category-list" style="margin-top: 100px;">
-    <img src="foto/Nasi goreng.jpeg"  alt="Breakfast"> 
-    <img src="foto/Es Selendang Mayang, Khas Betawi.jpeg" alt="Dessert">
-    <img src="foto/Oreo-milkshake.jpeg" alt="Drink">
-    <img src="foto/roti bakar coklat.jpeg" alt="Snack">
-  </section>
+<section class="category-list" style="margin-top: 100px;">
+  <img src="foto/Nasi goreng.jpeg" alt="Breakfast" href="kategori.php?id=1"> 
+  <img src="foto/Es Selendang Mayang, Khas Betawi.jpeg" alt="Dessert" href="kategori.php?id=2">
+  <img src="foto/Oreo-milkshake.jpeg" alt="Drink" href="kategori.php?id=3">
+  <img src="foto/roti bakar coklat.jpeg" alt="Snack" href="kategori.php?id=4">
+</section>
 
-  <!-- Upload Button -->
-  <button class="upload-btn" id="uploadBtn">Unggah Resepmu</button>
+<button class="upload-btn" id="uploadBtn">Unggah Resepmu</button>
 
-  <section class="recipe-grid">
-    <div class="recipe-card">
-      <img src="foto/udang asam manis.jpeg" alt="Udang">
-      <div class="info">
-        <div class="tags">
-          <span class="tag"><img src="foto/clock.png" id="tageasy" alt="">1 jam</span>
-          <span class="tag easy"><img src="foto/cook.png" id="tageasy" alt="">Mudah</span>
-        </div>
-        <p>Udang Asam Manis untuk Keluarga</p>
-      </div>
-    </div>
-
-    <div class="recipe-card">
-      <img src="foto/Bakso Home Made.jpeg" alt="Bakso">
-      <div class="info">
-        <div class="tags">
-          <span class="tag"><img src="foto/clock.png" id="tageasy" alt="">1 jam</span>
-          <span class="tag easy"><img src="foto/cook.png" id="tageasy" alt="">Mudah</span>
-        </div>
-        <p>Bakso Daging Sapi Homemade</p>
-      </div>
-    </div>
-
-    <div class="recipe-card">
-      <img src="foto/Nasi kuning.jpeg" alt="Bakso">
-      <div class="info">
-        <div class="tags">
-          <span class="tag"><img src="foto/clock.png" id="tageasy" alt="">1 jam</span>
-          <span class="tag easy"><img src="foto/cook.png" id="tageasy" alt="">Mudah</span>
-        </div>
-        <p>Nasi Kuning Nikmat</p>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const uploadBtn = document.getElementById("uploadBtn");
-
-    uploadBtn.addEventListener("mouseenter", () => {
-      uploadBtn.classList.add("animate");
-    });
-
-    uploadBtn.addEventListener("mouseleave", () => {
-      uploadBtn.classList.remove("animate");
-    });
-  </script>
-
-    <div class="footer">
-        <div class="container">
-         <div class="row">
-          <div class="col">
-            <img id="logofooter" src="foto/logo macook.png" alt="">
-            <h3>Lokasi</h3>
-            <div class="col">         
-              <h4>Kunjungi Akun Kami</h4>
-              <a href="https://www.instagram.com/nadsfaa_/?hl=en" target="_blank"><img id="foto" src="foto/ig.png" alt="ig"></a>
-              <a href="https://wa.me/6289682248714?text=Halo%20saya%20tertarik%20dengan%20produk%20Anda" target="_blank"><img id="foto" src="foto/wa.png" alt="wa"></a>
-            </div> 
+<div class="container">
+  <div class="row">
+    <?php while ($data = $result->fetch_assoc()): ?>
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+        <a href="halaman deskripsi.php?id=<?= $data['id_resep'] ?>" style="text-decoration: none; color: inherit;">
+          <div class="recipe-card">
+            <img src="<?= htmlspecialchars($data['gambar_resep']) ?>" alt="Foto Masakan">
+            <div class="info">
+              <div class="tags">
+                <span class="tag">
+                  <img src="foto/clock.png" id="tageasy" alt="">
+                  <?= htmlspecialchars($data['waktu_memasak']) ?>
+                </span>
+                <span class="tag easy">
+                  <img src="foto/cook.png" id="tageasy" alt="">
+                  <?= htmlspecialchars($data['porsi']) ?> porsi
+                </span>
+              </div>
+              <p><?= htmlspecialchars($data['nama_resep']) ?></p>
+            </div>
           </div>
-          <div class="col" id="col2">
-            <h3>Bantuan</h3><br>
-            <p id="foot">Kebijakan Privasi</p>
-          </div>
-          <div class="col">
-              <h3>Kontak kami</h3><br>
-              <p id="foot">Nama: Nadtasya Faizah</p>
-              <a href="mailto:nadtasyafaizahaqilah@gmail.com"><p id="foot">Email: @nadtasyafaizahmyflower.com</p></a>
-              <a href="https://wa.me/6289682248714?text=Halo%20saya%20tertarik%20dengan%20produk%20Anda"><p id="foot">No Hp: +62 89682248714</p></a>
-          </div>
-        </div> 
-        </div>
+        </a>
+      </div>
+    <?php endwhile; ?>
+  </div>
 </div>
-    
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img id="logofooter" src="foto/logo macook.png" alt="">
+        <h3>Lokasi</h3>
+        <div class="col">         
+          <h4>Kunjungi Akun Kami</h4>
+          <a href="https://www.instagram.com/nadsfaa_/?hl=en" target="_blank"><img id="foto" src="foto/ig.png" alt="ig"></a>
+          <a href="https://wa.me/6289682248714" target="_blank"><img id="foto" src="foto/wa.png" alt="wa"></a>
+        </div> 
+      </div>
+      <div class="col" id="col2">
+        <h3>Bantuan</h3><br>
+        <p id="foot">Kebijakan Privasi</p>
+      </div>
+      <div class="col">
+        <h3>Kontak kami</h3><br>
+        <p id="foot">Nama: Nadtasya Faizah</p>
+        <a href="mailto:nadtasyafaizahaqilah@gmail.com"><p id="foot">Email: @nadtasyafaizahmyflower.com</p></a>
+        <a href="https://wa.me/6289682248714"><p id="foot">No Hp: +62 89682248714</p></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const uploadBtn = document.getElementById("uploadBtn");
+  uploadBtn.addEventListener("mouseenter", () => uploadBtn.classList.add("animate"));
+  uploadBtn.addEventListener("mouseleave", () => uploadBtn.classList.remove("animate"));
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>

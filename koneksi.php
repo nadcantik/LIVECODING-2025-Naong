@@ -1,8 +1,13 @@
 <?php
 $host = "localhost";
-$username = "root";
-$password = "";
-$database = "macok";
+$user = "root";
+$pass = ""; 
+$db   = "macok"; // sesuai nama database kamu
 
-$conn = mysqli_connect($host, $username, $password, $database);
+$conn = new mysqli($host, $user, $pass, $db);
 
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+?>
