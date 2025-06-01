@@ -8,6 +8,7 @@ $favorit = $_SESSION['favorit'] ?? [];
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/favorit.css" />
   <title>Halaman Favorit</title>
   <style>
     .btn { display: inline-block; margin: 5px; padding: 10px; background: #f8b400; color: white; text-decoration: none; border-radius: 5px; }

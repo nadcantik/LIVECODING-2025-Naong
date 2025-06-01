@@ -71,13 +71,14 @@
   </style>
 </head>
 <body>
-  <?php include 'nav.php'; ?>
+  
   <div class="container">
     <div class="icon-unggah">🍲</div>
-    <h2> Unggah Resep Mu Di Sini</h2>
-    <p>Buat dan unggah resep hasil masakan mu.<br/>Klik untuk Unggah resep.</p>
+    <h2> Unggah Resep Mu Di Sini dan lihat hasil nya</h2>
+    <p>Buat dan unggah resep hasil masakan mu.<br/>Klik untuk Unggah resep jika ingin melihat resepmu klik lihat resep.</p>
     <div class="btn-container">
-      <a href="form unggah resep.html" class="btn">❤️unggah resep</a>
+      <a href="unggah resep.php" class="btn">❤️unggah resep</a>
+      <a href="resepku.php" class="btn">🍲 Resepku</a>
     </div>
   </div>
 

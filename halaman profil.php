@@ -1,10 +1,12 @@
 <?php session_start();
+
 include "koneksi.php";
 
+// Ambil ID user
 if (isset($_GET['id'])) {
-    $id_user = $_GET['id']; // Inisialisasi jika belum ada session
+    $id_user = $_GET['id']; // Bisa menampilkan profil orang lain
 } else {
-    $id_user = $_SESSION['id'];
+    $id_user = $_SESSION['id']; // Profil sendiri
 }
 
 $query = "SELECT * FROM user WHERE id = ?";
@@ -13,6 +15,13 @@ $stmt->bind_param("i", $id_user);
 $stmt->execute();
 $result = $stmt->get_result();
 
+// Ambil semua resep milik user ini
+$queryResep = "SELECT * FROM resep WHERE id_user = ?";
+$stmtResep = $conn->prepare($queryResep);
+$stmtResep->bind_param("i", $id_user);
+$stmtResep->execute();
+$resultResep = $stmtResep->get_result();
+
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
 } else {
@@ -20,8 +29,6 @@ if ($result->num_rows > 0) {
 }
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="id">
@@ -43,33 +50,13 @@ if ($result->num_rows > 0) {
     <div class="profile-header mx-auto mb-3">Halaman Profil</div>
 
     <div class="profile-pic">
-      <a href="halaman profil.html"><img src="foto/naong.jpg" alt="Profil"></a>
+     <img src="<?= $user['profil_user'] ?>" alt="Profil">
     </div>
     <h5><?= $user['nama'] ?></h5>
     <p class="text-muted"><?= $user['username'] ?> </p>
     <p><?= $user['deskripsi_diri'] ? $user['deskripsi_diri'] : 'tidak ada deskripsi' ?></p>
-    <button class="btn-edit mb-3">Edit Profil</button>
-    <button class="btn-follow px-4 mb-3">Edit Profil</button>
 
-    <div class="section-title">📖 Resepku</div>
-    <div class="row justify-content-center mt-3">
-      <div class="col-4 col-md-3 m-2 recipe-card">
-        <img src="<?= htmlspecialchars($data['gambar_resep']) ?>" alt="Foto Masakan">
-        <div class="info">
-          <div class="tags">
-            <span class="tag"><img src="foto/clock.png" id="tageasy" alt=""> <?= htmlspecialchars($data['waktu_memasak']) ?></span>
-            <span class="tag easy"><img src="foto/cook.png" id="tageasy" alt=""> <?= htmlspecialchars($data['porsi']) ?> porsi</span>
-          </div>
-          <p><?= htmlspecialchars($data['nama_resep']) ?></p>
-        </div>
-      </div>
-      <div class="col-4 col-md-3 m-2 recipe-card"></div>
-      <div class="col-4 col-md-3 m-2 recipe-card"></div>
-    </div>
-
-    <button class="btn-secondary mt-3">Lihat Lainnya</button>
-  </div>
-  <br>
+    <a href="edit profil.php" class="btn-follow px-4 mb-3">Edit Profil</a>
 
     <div class="footer">
         <div class="container">

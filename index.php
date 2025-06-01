@@ -48,8 +48,8 @@ $result = $conn->query($query);
   <img src="foto/Oreo-milkshake.jpeg" alt="Drink" href="kategori.php?id=3">
   <img src="foto/roti bakar coklat.jpeg" alt="Snack" href="kategori.php?id=4">
 </section>
-
-<button class="upload-btn" id="uploadBtn">Unggah Resepmu</button>
+<a href="tampilan unggah.php">
+<button class="upload-btn" id="uploadBtn">Unggah Resepmu</button></a>
 
 <div class="container">
   <div class="row">

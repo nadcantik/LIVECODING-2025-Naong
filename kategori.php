@@ -1,14 +1,20 @@
 <?php
-require 'koneksi.php';
+include "koneksi.php" ; // Pastikan ini ada dan konek DB
 
-session_start();
-$id_kategori = $_GET['id']; // Default ke kategori Kue jika tidak ada id_kategori
-$query = "SELECT * FROM kategori WHERE id = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("i", $id_kategori);
-$stmt->execute();
-$resultt = $stmt->get_result();
-$kategori = $resultt->fetch_assoc();
+$id_kategori = $_GET['id_kategori'] ?? 1; // Default ke kategori id = 1 jika tidak diset
+
+$ktgquery = "SELECT * FROM kategory WHERE id_kategori = ?";
+$ktgstmt = $conn->prepare($ktgquery);
+
+if ($ktgstmt) {
+    $ktgstmt->bind_param("i", $id_kategori);
+    $ktgstmt->execute();
+    $resultt = $ktgstmt->get_result();
+    $kategory = $resultt->fetch_assoc();
+    $ktgstmt->close();
+} else {
+    die("Query preparation failed: " . $conn->error);
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,19 +22,19 @@ $kategori = $resultt->fetch_assoc();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resep Kue</title>
+  <title>Kategori</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/kategori.css">
 </head>
 <body>
-
+ <?php include 'nav.php'; ?>
+<br>
 <div class="container py-5">
   <h2 class="text-center mb-3"> 
-  <?=$kategori['nama_kategori'] ?> </h2>
+  <?=$kategory ['nama_kategori'] ?> </h2>
   <p class="text-center mb-4">
-    <?=$kategori['deskripsi_kategori'] ?> 
-  </p>
-  <?php include 'nav.php'; ?>// Include navbar if needed
+    <?=$kategory ['Deskripsi_kategori'] ?> 
+</p>
 
   <div class="row">
     <?php

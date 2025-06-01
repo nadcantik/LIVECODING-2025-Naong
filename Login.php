@@ -30,6 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -62,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form id="loginForm" method="post" action="login.php">
         <input type="text" name="username" class="form-control" placeholder="Username" required>
         <input type="password" name="password" class="form-control" placeholder="Password" required>
-        <button type="submit" class="btn btn-login w-100">Login</button>
+        <button type="submit" class="btn btn-login w-100" name="login">Login</button>
         </form>
 
   <?php if (!empty($error)): ?>

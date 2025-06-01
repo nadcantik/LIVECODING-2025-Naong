@@ -26,7 +26,7 @@ body{
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
   }
 
-  .btn-login {
+  .btn btn-login {
     background-color: #28a745;
     color: white;
     font-weight: bold;
@@ -36,8 +36,8 @@ body{
     transition: background-color 0.3s ease;
   }
 
-  .btn-login:hover {
-    background-color: #218838;
+  .btn btn-login:hover {
+    background-color: #497f55;
   }
 
   .login-container img {
